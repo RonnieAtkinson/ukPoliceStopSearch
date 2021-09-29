@@ -1,0 +1,16 @@
+// ==========================================================================
+// ABSTRACTS / FUNCTIONS / #GRID WIDTH PERCENTAGES
+// ==========================================================================
+
+// @param {String} $key Name of grid width (e.g. two-thirds)
+// @return {Number} Percentage width
+// @throw if `$key` is not a valid grid width
+//
+
+@function grid-width($key) {
+    @if map-has-key($grid-widths, $key) {
+        @return map-get($grid-widths, $key);
+    }
+  
+    @error 'Unknown grid width `#{$key}`';
+  }

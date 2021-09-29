@@ -1,0 +1,49 @@
+// ==========================================================================
+// COMPONENTS / #VIEW
+// ==========================================================================
+
+.ss-view {
+
+    display: none;
+
+    &__header {
+        padding: 32px 32px 64px 32px;
+        background: $color-primary;
+
+        @include mq($from: 'tablet'){
+            height: 210px;
+            padding: 32px;
+        }
+       
+        h1 {
+            font-size: 28px;
+            color: $color-header-title;
+            margin-bottom: 4px;
+        }
+
+        span {
+            color: $color-header-title;
+            font-size: 18px;
+            color: #EBF3F5;
+        }
+    }
+
+    &__content {
+        padding: 32px;
+    }
+
+    &__content-inner {
+        position: relative;
+        margin-top: -70px;
+    }
+
+    &.active {
+        display: block;
+    }
+
+    .grid-row {
+        &:not(:last-child){
+            margin-bottom: 16px;
+        }
+    }
+}

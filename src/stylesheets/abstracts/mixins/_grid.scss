@@ -1,0 +1,72 @@
+// ==========================================================================
+// ABSTRACTS / MIXINS / #GRID
+// ==========================================================================
+
+// Generate grid row styles
+//
+// Creates a grid row class with a standardised margin.
+//
+// @param {String} $class [grid-row] CSS class name
+//
+// @example - Default
+//   @include grid-row;
+//
+// @example - Customising the class name
+//   @include grid-row('app-grid');
+//
+//
+
+@mixin grid-row($class: 'grid-row') {
+    .#{$class} {
+        @include clearfix;
+        margin-left: - ($grid-gutter-half);
+        margin-right: - ($grid-gutter-half);
+    }
+}
+
+//
+// Generate grid column styles
+//
+// Creates a cross browser grid column with a class of '.grid-column' by
+// default, and a standardised gutter between the columns.
+//
+// Common widths are predefined above as keywords in the `$grid-widths` map.
+//
+// By default their width changes from 100% to specified width at the 'tablet'
+// breakpoint, but that can be configured to be any other breakpoint by using
+// the `$at` parameter.
+//
+// @param {String} $class [grid-column] CSS class name
+// @param {String} $width [full] one-quarter | one-third | one-half | two-third | three-quarters | full
+// @param {String} $float [left] left | right
+// @param {String} $at [tablet] - mobile | tablet | desktop | any custom breakpoint in px or em
+//
+// @example scss - Default
+//   @include grid-column(two-thirds)
+//
+// @example scss - Customising the class name
+//   @include grid-column(one-half, $class: "test-column");
+//
+// @example scss - Customising the breakpoint where width percentage is applied
+//   @include grid-column(one-half, $at: desktop);
+//
+// @example scss - Customising the float direction
+//   @include grid-column(one-half, $float: right);
+//
+
+@mixin grid-column($width: full, $float: left, $at: desktop, $class: 'grid-column') {
+
+    .#{$class}-#{$width} {
+        box-sizing: border-box;
+        padding: 0 $grid-gutter-half;
+
+        @if $at !=desktop {
+            width: 100%;
+        }
+
+        @include mq($from: $at) {
+            float: $float;
+            width: grid-width($width);
+        }
+    }
+}

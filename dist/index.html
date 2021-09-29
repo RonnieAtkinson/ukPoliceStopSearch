@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Police Stop and Search Data UK</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./css/main.css">
+
+        <script src="./scripts/main.js" defer></script>
+    </head>
+
+    <body>
+        <div class="ss-container ss-container-width">
+            <div id="loader">
+                <img src="images/loading.gif" alt="Loading...">
+            </div>
+
+            <section id="ss-widget-home" class="ss-view active">
+                <div class="ss-view__header">
+                    <h1>Stop and searches in your area:</h1>
+                    <span>View stop and search data for your local police force</span>
+                </div>
+
+                <div class="ss-view__content">
+                    <div class="ss-view__content-inner">
+                        <form>
+                            <div class="form-control">
+                                <label for="force-list">Select a Police force</label>
+                                <select id="force-list"></select>
+                            </div>
+
+                            <button id="force-btn">Get stop and search data</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section id="ss-widget-data" class="ss-view">
+                <div class="ss-view__header">
+                    <button id="ss-back-btn">Back</button>
+                    <div class="ss-title"></div>
+                </div>
+
+                <div class="ss-view__content">
+                    <!-- <div class="ss-months">
+                        <ul class="ss-months-list">
+                            <li><button data-date="2020-05">May</button></li>
+                            <li><button data-date="2020-06">June</button></li>
+                            <li><button data-date="2020-07">July</button></li>
+                        </ul>
+                    </div> -->
+
+                    <div class="ss-view__content-inner">
+                        <div class="grid-row row-01">
+                            <div class="ss-total dataset grid-column grid-column-one-third"></div>
+                            <div class="ss-person dataset grid-column grid-column-two-thirds"></div>
+                        </div>
+
+                        <div class="row row-02">
+                            <div class="ss-gender dataset"></div>
+                            <div class="ss-agerange dataset"></div>
+                        </div>
+
+                        <div class="row row-03">
+                            <div class="ss-object col dataset"></div>
+                            <div class="ss-outcome col dataset"></div>
+                        </div>
+
+                        <div class="ss-nodata"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </body>
+
+</html>

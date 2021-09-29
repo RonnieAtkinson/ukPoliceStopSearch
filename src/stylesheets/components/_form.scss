@@ -1,0 +1,27 @@
+// ==========================================================================
+// COMPONENTS / #FORM
+// ==========================================================================
+
+label {
+    display: block;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+select {
+    width: 100%;
+    padding: 6px;
+}
+
+form {
+    button {
+        display: block;
+        width: 100%;
+        padding: 16px;
+    }
+}
+
+.form-control {
+    margin-bottom: 16px;
+}

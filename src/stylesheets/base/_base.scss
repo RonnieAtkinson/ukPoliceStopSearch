@@ -1,0 +1,80 @@
+// ==========================================================================
+// BASE / #BASE
+// ==========================================================================
+
+html {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow-y: scroll; 
+
+    font-family: $font-family-body, $font-family-fallback;
+}
+
+* {
+
+    &,
+    &:before,
+    &:after {
+        -moz-box-sizing: inherit;
+        -webkit-box-sizing: inherit;
+        box-sizing: inherit;
+    }
+}
+
+body {
+    color: $default-text-color;
+    font-size: $base-font-size;
+    font-weight: $font-weight-normal;
+    // line-height: _line-height($base-line-height, $base-font-size);
+
+    -moz-osx-font-smoothing: grayscale; // [2]
+    -webkit-font-smoothing: antialiased; // [2]
+
+    margin: 0;
+    min-height: 100%;
+    box-sizing: border-box;
+}
+
+article,
+aside,
+footer,
+header,
+nav,
+section {
+    display: block
+}
+
+img {
+    max-width: 100%;
+}
+
+button {
+    border: none;
+    margin: 0;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: $font-weight-bold;
+    border-radius: $border-radius-default;
+    background-color: $color-cta;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $color-cta-action;
+    }
+
+}
+
+.ss-container {
+
+    position: relative;
+    min-height: 400px;
+    margin: 16px;
+    border: solid $border-width-thin $color-primary;
+    border-radius: $border-radius-default;
+
+    @include mq($from: 'tablet'){
+        max-width: 600px;
+        margin: 16px auto;
+    }
+}

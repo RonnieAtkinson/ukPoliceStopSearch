@@ -1,0 +1,133 @@
+// ==========================================================================
+// COMPONENTS / #DATASET
+// ==========================================================================
+
+.dataset{
+    &__title{
+        display: block;
+        font-size: 22px;
+        font-weight: $font-weight-bold;
+    }
+}
+
+.ss-total {
+    &.dataset{
+        margin-bottom: 16px;
+    }
+
+    .dataset {
+        &__inner{
+            position: relative;
+            padding: 12px 8px;
+            height: 120px;
+            background-color: $color-dataset-01-bg;
+        }
+    }
+
+    .datapoint {
+        span{
+            display: block;
+        }
+
+        &__label {
+            font-size: 14px;
+            font-weight: $font-weight-bold;
+            padding-bottom: 8px;
+            border-bottom: solid $border-width-thin $color-dataset-01-border;
+        }
+
+        &__value{
+            position: absolute;
+            bottom: 12px;
+            right: 16px;
+
+            font-size: 32px;
+            font-weight: $font-weight-bold;
+        }
+    }
+}
+
+.ss-person {
+
+    &__title {
+        display: block;
+        font-size: 14px;
+        font-weight: $font-weight-bold;
+        padding-bottom: 8px;
+        border-bottom: solid $border-width-thin $color-dataset-02-border;
+    }
+
+    &.dataset{
+        margin-bottom: 16px;
+    }
+
+    .dataset {
+        &__inner{
+            @include clearfix();
+            
+            position: relative;
+            padding: 12px 8px;
+            height: 120px;
+            background-color: $color-dataset-02-bg;
+
+            // border: solid $border-width-thin $color-primary;
+            // border-radius: $border-radius-default;
+        }
+    }
+
+    .datapoint {
+        margin-top:16px;
+        width: 50%;
+        float: left;
+        padding-left: 16px;
+
+        &:not(:last-child){
+            border-right: solid $border-width-thin $color-dataset-02-border;
+            padding-right: 16px;
+            padding-left: 0;
+        }
+
+        span {
+            display: block;
+        }
+
+        &__label {
+            text-align: left;
+        }
+
+        &__value {
+            text-align: right;
+            font-size: 32px;
+            font-weight: $font-weight-bold;   
+        }
+    }
+}
+
+.ss-gender,
+.ss-agerange,
+.ss-object,
+.ss-outcome{
+
+    margin-bottom: 32px;
+
+    .datapoint {
+        padding: 8px 8px 8px 0;
+
+        &:not(:last-child){
+            border-bottom: solid $border-width-thin $color-dataset-row-border;
+        }
+
+        &__label {
+            text-transform: capitalize;
+        }
+
+        &__value {
+            float: right;
+            font-weight: $font-weight-bold;
+        }
+    }
+
+    .dataset__title {
+        padding-bottom: 8px;
+    }
+}

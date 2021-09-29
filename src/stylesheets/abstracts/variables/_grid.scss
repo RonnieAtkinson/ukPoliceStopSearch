@@ -1,0 +1,17 @@
+// ==========================================================================
+// ABSTRACTS / VARIABLES / #GRID
+// ==========================================================================
+
+$page-width: 600px;
+$grid-gutter: 32px;
+$grid-gutter-half: $grid-gutter / 2;
+
+// GRID WIDTHS
+$grid-widths: (
+    one-quarter: 25%,
+    one-third: 33.3333%,
+    one-half: 50%,
+    two-thirds: 66.6666%,
+    three-quarters: 75%,
+    full: 100%
+) !default;

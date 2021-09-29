@@ -1,0 +1,44 @@
+// ==========================================================================
+// ABSTRACTS / MIXINS / #MEDIA QUERIES
+// ==========================================================================
+
+// Media query mixin
+//
+// Breakpoints:
+// mobile:  320px, // 20em
+// tablet:  641px, // 40.0625em
+// desktop: 769px, // 48.0625em
+// large-desktop: 990px // 61.875em
+// @example @include mq($from: tablet);
+//
+
+@mixin mq($from: false, $until: false) {
+    $min-width: 0;
+    $max-width: 0;
+    $media-query: '';
+
+    @if $from {
+        $min-width: map-get($mq-breakpoints, $from);
+    }
+
+    @if $until {
+        $max-width: map-get($mq-breakpoints, $until);
+    }
+
+    @if $min-width !=0 {
+        $media-query: '(min-width: #{$min-width})';
+    }
+
+    @if $max-width !=0 {
+        $media-query: '(max-width: #{$max-width})';
+    }
+
+    @media #{$media-query} {
+        @content;
+    }
+
+
+    // @media (min-width: map-get($mq-breakpoints, $from)) {
+    //     @content;
+    // }
+}
